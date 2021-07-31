@@ -12,14 +12,16 @@ function App() {
     const list = userlist.filter((user)=>user.id !== id);
     setUserList(list);
   }
-
+  const addUser = (user)=>{
+    setUserList([...userlist,user]);
+  }
   return (
    
     <Router>
       <Navbar/>
       <Switch>
           <Route exact path='/'> 
-              <h1>Welcome Home!</h1>
+              <h1> HASIB!</h1>
           </Route>
           <Route path='/userlist'>
             <div>
@@ -27,7 +29,7 @@ function App() {
             </div>
           </Route>
           <Route path='/create'>
-              <CreateUser status='add' />
+              <CreateUser status='add' addnewuser ={addUser} />
           </Route>
           <Route path='/edit/:id' children={<CreateUser status='edit' />}></Route>
           <Route path='*'>
