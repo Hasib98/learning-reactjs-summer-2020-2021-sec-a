@@ -8,12 +8,12 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {
 
-const url = `https://jsonplaceholder.typicode.com/posts`;
-//const url = `http://localhost:8000/userlist`;
-
-
+//const url = `https://jsonplaceholder.typicode.com/posts`;
+const url = `http://localhost:8000/userlist`;
 
   const [userlist, setUserList] = useState([]);
+
+  
  useFetch(url, setUserList);
   /* const getData = (url)=>{
       return fetch(url)
